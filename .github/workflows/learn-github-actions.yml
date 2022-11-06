@@ -1,13 +1,17 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: ci
+
+on:
+  push:
+    branches: main
+
 jobs:
-  check-bats-version:
+  login:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      -
+        name: Login to GAR
+        uses: docker/login-action@v2
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+          registry: europe-west1-docker.pkg.dev
+          username: _json_key
+          password: ${{ secrets.GAR_JSON_KEY }}
