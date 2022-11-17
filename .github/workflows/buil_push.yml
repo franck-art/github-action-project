@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
        ARTIFACT_REGISTRY:  europe-west1-docker.pkg.dev
-       DOCKER_IMAGE: europe-west1-docker.pkg.dev/develop-368517/app-test
+       DOCKER_IMAGE: europe-west1-docker.pkg.dev/develop-368517/app-test/image-test
        DOCKER_TAG: 1.0.1
     steps:
       - name: Checkout
