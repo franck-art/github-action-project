@@ -20,11 +20,11 @@ jobs:
       - name: Login to Artifact registry
         uses: docker/login-action@v2
         with:
-          registry: $ARTIFACT_REGISTRY
+          registry: ${{ env.ARTIFACT_REGISTRY }}
           username: _json_key
           password: ${{ secrets.GAR_JSON_KEY }}
 
       - name: Build and push Docker
         run: |-
-           docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f ../../project/Dockerfile
-           docker image push  $DOCKER_IMAGE:$DOCKER_TAG
+           docker build -t ${{ env.ARTIFACT_REGISTRY }}:${{ env.DOCKER_TAG }} -f ../../project/Dockerfile
+           docker image push  ${{ env.ARTIFACT_REGISTRY }}:${{ env.DOCKER_TAG }}
