@@ -36,12 +36,3 @@ jobs:
                 #   cd docker_test
            docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f ../../project/Dockerfile
            docker image push  $DOCKER_IMAGE:$DOCKER_TAG
-        shell: bash
-      
-          # - name: Build and push
-        # uses: docker/build-push-action@v3
-        # with:
-                # context: .
-          # file: project/Dockerfile
-          # push: true
-          #          tags:  ${{ steps.meta.outputs.tags }}
