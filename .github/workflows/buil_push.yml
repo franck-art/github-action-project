@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
        ARTIFACT_REGISTRY:  europe-west1-docker.pkg.dev
-       DOCKER_IMAGE: $ARTIFACT_REGISTRY/develop-368517/app-test
+       DOCKER_IMAGE: ${{ env.ARTIFACT_REGISTRY }}/develop-368517/app-test
        DOCKER_TAG: 1.0.1
     steps:
       - name: Checkout
@@ -26,5 +26,5 @@ jobs:
 
       - name: Build and push Docker
         run: |-
-           docker build -f /project/Dockerfile -t ${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_TAG }} .
+           docker build -f ../../project/Dockerfile -t ${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_TAG }} .
            docker image push  ${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_TAG }}
