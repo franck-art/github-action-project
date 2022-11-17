@@ -26,7 +26,5 @@ jobs:
 
       - name: Build and push Docker
         run: |-
-                #     gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
-                #   cd docker_test
            docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f ../../project/Dockerfile
            docker image push  $DOCKER_IMAGE:$DOCKER_TAG
