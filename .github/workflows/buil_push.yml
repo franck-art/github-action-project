@@ -26,5 +26,5 @@ jobs:
 
       - name: Build and push Docker
         run: |-
-           docker build -f /project/Dockerfile -t ${{ env.ARTIFACT_REGISTRY }}:${{ env.DOCKER_TAG }}
-           docker image push  ${{ env.ARTIFACT_REGISTRY }}:${{ env.DOCKER_TAG }}
+           docker build -f /project/Dockerfile -t ${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_TAG }} .
+           docker image push  ${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_TAG }}
