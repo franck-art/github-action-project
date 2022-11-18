@@ -1,4 +1,4 @@
-name: Login, Build and Push on Artifact-artifactory using Github Actions
+name: Login, Build , Automatic tag and  Push on Artifact-artifactory using Github Actions
 
 on:
   push:
