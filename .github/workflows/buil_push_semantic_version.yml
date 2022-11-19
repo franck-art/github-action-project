@@ -22,7 +22,7 @@ jobs:
         with:
           tag_prefix: "v"
           major_pattern: "breaking"
-          minor_pattern: "feat:"
+          minor_pattern: "feat"
           format: "${major}.${minor}.${patch}"
           change_path: "."
           short_tags: false
@@ -46,6 +46,9 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: project/
-          push: true
+          push: false
           tags: ${{ steps.tag.outputs.version_tag  }}
           labels: ${{ steps.meta.outputs.labels  }}
+      
+      - run:
+              docker push europe-west1-docker.pkg.dev/develop-368517/app-test2/automate_tag:${{ steps.tag.outputs.version_tag  }}
