@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: europe-west1-docker.pkg.dev/develop-368517/app-test1/image-test
+          images: europe-west1-docker.pkg.dev/develop-368517/app-test1/automate_tag
 
       - name: Bump version
         uses: PaulHatch/semantic-version@v4.0.2
