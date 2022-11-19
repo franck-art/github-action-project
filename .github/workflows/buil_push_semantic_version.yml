@@ -24,7 +24,6 @@ jobs:
           major_pattern: "breaking"
           minor_pattern: "feat:"
           format: "${major}.${minor}.${patch}"
-          namespace: main
           change_path: "."
           short_tags: false
           bump_each_commit: false
