@@ -51,4 +51,5 @@ jobs:
           labels: ${{ steps.meta.outputs.labels  }}
       
       - run:
-              docker push europe-west1-docker.pkg.dev/develop-368517/app-test2/automate_tag:${{ steps.tag.outputs.version_tag  }}
+              docker images 
+              #docker push europe-west1-docker.pkg.dev/develop-368517/app-test2/automate_tag:${{ steps.tag.outputs.version_tag  }}
