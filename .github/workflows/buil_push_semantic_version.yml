@@ -16,6 +16,12 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: europe-west1-docker.pkg.dev/develop-368517/app-test1/image-test
+
       - name: Bump version
         uses: PaulHatch/semantic-version@v4.0.2
         id: tag
@@ -42,4 +48,4 @@ jobs:
           context: project/
           push: true
           tags: ${{ steps.tag.outputs.version_tag  }}
-          labels: ${{ steps.meta.outputs.version_type  }}
+          labels: ${{ steps.meta.outputs.labels  }}
