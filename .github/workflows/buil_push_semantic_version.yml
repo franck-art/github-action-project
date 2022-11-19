@@ -47,5 +47,4 @@ jobs:
         with:
           context: project/
           push: true
-          tags: ${{ steps.tag.outputs.version_tag  }}
-          labels: ${{ steps.meta.outputs.labels  }}
+          tags: europe-west1-docker.pkg.dev/develop-368517/app-test2/automate_tag:${{ steps.tag.outputs.version_tag  }}
